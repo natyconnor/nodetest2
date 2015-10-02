@@ -35,9 +35,12 @@ block content
         tbody
     // User List
 
+    // Add User button
+    button#showAddUser Add User
+
     // Add User
-    h2 Add User
-    #addUser
+    #addUserForm
+      h2 Add User
       fieldset
         input#inputUserName(type='text', placeholder='Username')
         input#inputUserEmail(type='text', placeholder='Email')
@@ -49,6 +52,23 @@ block content
         input#inputUserGender(type='text', placeholder='Gender')
         br
         button#btnAddUser Add User
+        button#btnCancelAddUser Cancel
     // Add User
+
+    // Edit User
+    #editUserForm
+      h2 Edit User
+      fieldset
+        input#editUserName(type='text', placeholder='Username')
+        input#editUserEmail(type='text', placeholder='Email')
+        br
+        input#editUserFullname(type='text', placeholder='Full Name')
+        input#editUserAge(type='text', placeholder='Age')
+        br
+        input#editUserLocation(type='text', placeholder='Location')
+        input#editUserGender(type='text', placeholder='Gender')
+        br
+        button#btnEditUser Save Changes
+        button#btnCancelEditUser Cancel
 
   // Wrapper

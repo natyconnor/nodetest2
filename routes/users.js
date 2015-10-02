@@ -37,5 +37,23 @@ router.delete('/deleteuser/:id', function(req, res) {
     });
 });
 
+/* PUT to edituser */
+router.put('/edituser/:id', function (req, res) {
+    console.log(req.body)
+    var db = req.db;
+    var collection = db.get('userlist');
+    var userToUpdate = req.params.id;
+    collection.update({ '_id' : userToUpdate }, 
+        { 'username': req.body.username, 
+          'email': req.body.email, 
+          'fullname': req.body.fullname,
+          'age': req.body.age,
+          'location': req.body.location,
+          'gender': req.body.gender },
+        function(err) {
+            res.send((err === null) ? { msg: '' } : { msg: 'error: ' + err });
+        });
+});
+
 
 module.exports = router;
